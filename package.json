@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/Slqmy/skin-combiner/issues"
   },
-  "homepage": "https://github.com/Slqmy/skin-combiner#readme"
+  "homepage": "https://github.com/Slqmy/skin-combiner#readme",
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  }
 }
