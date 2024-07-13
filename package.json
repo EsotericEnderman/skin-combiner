@@ -29,6 +29,7 @@
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "image-js": "^0.35.6"
   }
 }
