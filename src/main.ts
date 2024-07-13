@@ -1,23 +1,26 @@
-import { readFileSync } from "fs";
-import { firstSkinFilePath, secondSkinFilePath } from "./constants";
+import { firstSkinFilePath, secondSkinFilePath } from "./constants.js";
+import { Image } from "image-js";
 
-let firstSkin: Buffer;
-let secondSkin: Buffer;
+let firstSkin: Image;
+let secondSkin: Image;
 
 try {
-    firstSkin = readFileSync(firstSkinFilePath);
-    secondSkin = readFileSync(secondSkinFilePath);
+    firstSkin = await Image.load(firstSkinFilePath);
+    secondSkin = await Image.load(secondSkinFilePath);
 } catch (error) {
     console.error(error);
-
+} finally {
     if (!firstSkin) {
         console.error("Could not find first skin. Expected file path: " + firstSkinFilePath);
-        process.exit(1)
     }
 
     if (!secondSkin) {
         console.error("Could not find first skin. Expected file path: " + secondSkinFilePath);
+    }
+
+    if (!firstSkin || !secondSkin) {
         process.exit(1);
     }
 }
 
+const topOfLowerLayerHead: number[] = [];
