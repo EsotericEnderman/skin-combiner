@@ -26,5 +26,8 @@
   "homepage": "https://github.com/Slqmy/skin-combiner#readme",
   "devDependencies": {
     "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security"
   }
 }
